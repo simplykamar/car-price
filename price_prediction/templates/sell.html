@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Car</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark py-3">
+        <nav class="container d-flex flex-wrap justify-content-between">
+          <div class="flex-lg-row">
+            <a href="/" class="text-white mr-3">Home</a>
+            <a class="btn btn btn-light btn-lg mr-3" href="/buy" role="button">Buy</a>
+            <a class="btn btn btn-light btn-lg" href="/predict-price" role="button">Check Your Car Price</a>
+          
+          </div>
+          {%if request.user.is_authenticated%}
+        <div>
+          <a href="/logout" class="text-white mr-3">Logout</a>
+        </div>
+        {%else%}
+        <div>
+          <a href="/login" class="text-white mr-3">Login</a>
+          <a href="/signup" class="btn btn-light">Sign Up</a>
+        </div>
+        {%endif%}
+        </nav>
+      </header>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Sell Your Car</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" class="form-control" id="make" name="make" required>
+          </div>
+          <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" id="model" name="model" required>
+          </div>
+          <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" class="form-control" id="year" name="year" required>
+          </div>
+          <div class="form-group">
+            <label for="miles">Miles</label>
+            <input type="number" class="form-control" id="miles" name="miles" required>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="photo1">Photo 1</label>
+            <input type="file" class="form-control-file" id="photo1" name="photo1">
+          </div>
+          <div class="form-group">
+            <label for="photo2">Photo 2</label>
+            <input type="file" class="form-control-file" id="photo2" name="photo2">
+          </div>
+          <div class="form-group">
+            <label for="photo3">Photo 3</label>
+            <input type="file" class="form-control-file" id="photo3" name="photo3">
+          </div>
+          <div class="form-group">
+            <label for="photo4">Photo 4</label>
+            <input type="file" class="form-control-file" id="photo4" name="photo4">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0

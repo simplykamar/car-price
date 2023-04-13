@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <header class="bg-dark py-3">
+      <nav class="container d-flex flex-wrap justify-content-between">
+        <a href="/" class="text-white">
+          <h3>Home</h3>
+        </a>
+        <div>
+          <a href="/login" class="btn btn-light">Login</a>
+          
+        </div>
+      </nav>
+    </header>
+
+    <main class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h1 class="text-center mb-4">Sign Up</h1>
+          <form action="/signup/" method="post" autocomplete="off">{%csrf_token%}
+            <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter email">
+            </div>
+          <!--   <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter age">
+            </div> -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="passwd" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+          <p class="text-center mt-3">Already have an account? <a href="/login">Login</a></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
